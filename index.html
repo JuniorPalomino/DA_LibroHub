@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibroHub - Tu tienda de libros en línea</title>
+    
+    <!-- Incluye los archivos CSS y JavaScript de Bootstrap 5 -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Incluye tu archivo Sass personalizado -->
+    <link href="index.scss" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">LibroHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalogo.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de la página -->
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1>Bienvenido a LibroHub</h1>
+            <p>Tu tienda de libros en línea</p>
+            <a class="btn btn-primary btn-lg" href="catalogo.html" role="button">Explorar catálogo</a>
+        </div>
+    </header>
+
+    <!-- Sección de Destacados -->
+    <section class="container mt-5">
+        <h2>Libros Destacados</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/libro1.jpg" alt="Libro 1" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro 1</h5>
+                        <p class="card-text">Descripción breve del libro 1. Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/libro2.jpg" alt="Libro 2" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro 2</h5>
+                        <p class="card-text">Descripción breve del libro 2. Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/libro3.jpg" alt="Libro 3" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Título del Libro 3</h5>
+                        <p class="card-text">Descripción breve del libro 3. Lorem ipsum dolor sit amet.</p>
+                        <a href="#" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">Excelente servicio. Encontré el libro que estaba buscando a un precio increíble.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">La variedad de libros es impresionante. Definitivamente volveré a comprar aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2023 LibroHub. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Incluye los archivos JavaScript de Bootstrap 5 al final del documento -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+// Paso 2: Sass Variables
+$color-primario: #007bff;
+
+// Estilos globales
+body {
+    font-family: Arial, sans-serif;
+}
+
+// Paso 3: Sass Nesting
+.navbar {
+    background-color: $color-primario;
+    color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+}
+
+.jumbotron {
+    background-color: $color-primario;
+    color: #fff;
+    padding: 40px 0;
+
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    a {
+        color: #fff;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+// Paso 5: Sass @mixin
+@mixin estilo-borde {
+    border: 1px solid $color-primario;
+}
+
+// Paso 9: Sass Selector
+.btn-primary {
+    background-color: $color-primario;
+    border-color: $color-primario;
+}
+
+// Paso 11: Sass Color
+.jumbotron {
+    background-color: $color-primario;
+    color: #fff;
+    padding: 40px 0;
+}
+
+// Sección de Destacados
+.container {
+    margin-top: 20px;
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+
+        img {
+            max-width: 100%;
+        }
+
+        .card-title {
+            font-size: 18px;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: $color-primario;
+            border-color: $color-primario;
+        }
+    }
+}
+
+// Paso 7: Sass Functions
+.card {
+    &:nth-child(odd) {
+        background-color: lighten($color-primario, 20%);
+    }
+}
+
+// Sección de Testimonios
+.bg-light {
+    padding: 20px 0;
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .card {
+        background-color: $color-primario;
+        color: #fff;
+        margin-bottom: 20px;
+
+        .card-text {
+            font-size: 16px;
+        }
+    }
+}
+
+// Pie de página
+.bg-dark {
+    padding: 10px 0;
+
+    p {
+        color: #fff;
+    }
+}
