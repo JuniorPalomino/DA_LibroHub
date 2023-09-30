@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibroHub - Carrito de Compras</title>
+    
+    <!-- Incluye los archivos CSS y JavaScript de Bootstrap 5 -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Incluye tu archivo Sass personalizado -->
+    <link href="css/tu-estilo-carrito.scss" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">LibroHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalogo.html">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido del carrito -->
+<div class="container mt-5">
+    <h1>Carrito de Compras</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody id="carrito-body">
+            <!-- Aquí se mostrarán los libros agregados al carrito -->
+        </tbody>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-primary" id="comprar">Comprar</button>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2023 LibroHub. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- Incluye los archivos JavaScript de Bootstrap 5 al final del documento -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- JavaScript para manejar el carrito de compras -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const carritoBody = document.getElementById("carrito-body");
+        const comprarButton = document.getElementById("comprar");
+
+        // Función para obtener los libros del almacenamiento local
+        function obtenerLibrosEnCarrito() {
+            const librosEnCarrito = localStorage.getItem("librosEnCarrito");
+            return librosEnCarrito ? JSON.parse(librosEnCarrito) : [];
+        }
+
+        // Función para mostrar los libros en el carrito
+        function mostrarLibrosEnCarrito() {
+    carritoBody.innerHTML = "";
+    const librosEnCarrito = obtenerLibrosEnCarrito();
+    librosEnCarrito.forEach(function (libro) {
+        const row = document.createElement("tr");
+        const precioFormateado = typeof libro.precio === 'number' ? `$${libro.precio.toFixed(2)}` : 'Precio no disponible'; // Verificar si el precio es válido
+        row.innerHTML = `
+            <td>${libro.titulo}</td>
+            <td>${libro.autor}</td>
+            <td>${precioFormateado}</td>
+        `;
+        carritoBody.appendChild(row);
+    });
+}
+
+        // Muestra los libros en el carrito cuando la página se carga
+        mostrarLibrosEnCarrito();
+
+        // Evento para agregar un libro al carrito
+        document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("agregar-al-carrito")) {
+                const titulo = event.target.getAttribute("data-titulo");
+                const autor = event.target.getAttribute("data-autor");
+                const precio = parseFloat(event.target.getAttribute("data-precio"));
+                const libro = { titulo, autor, precio };
+
+                // Obtiene los libros actuales en el carrito, agrega el nuevo libro y actualiza el almacenamiento local
+                const librosEnCarrito = obtenerLibrosEnCarrito();
+                librosEnCarrito.push(libro);
+                localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito));
+
+                alert(`Se ha agregado "${titulo}" al carrito.`);
+                mostrarLibrosEnCarrito();
+            }
+        });
+
+        // Evento para realizar la compra
+        comprarButton.addEventListener("click", function () {
+            // Aquí puedes agregar la lógica para procesar la compra
+            // Por ejemplo, enviar los libros a un servidor o realizar acciones adicionales.
+            alert("Compra exitosa. Gracias por tu compra.");
+            // Vacía el carrito después de la compra y actualiza el almacenamiento local
+            localStorage.removeItem("librosEnCarrito");
+            mostrarLibrosEnCarrito();
+        });
+    });
+</script>
+</body>
+</html>

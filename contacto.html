@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibroHub - Contacto</title>
     
-    <!-- Incluye los archivos CSS de Bootstrap 5 -->
+    <!-- Incluye los archivos CSS y JavaScript de Bootstrap 5 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Incluye tu archivo Sass personalizado para esta página -->
-    <!--<link href="ruta/a/tu-estilo-contacto.css" rel="stylesheet">-->
+    <!-- Incluye tu archivo Sass personalizado -->
+    <link href="css/tu-estilo-contacto.scss" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de navegación (reutiliza la misma barra de navegación del archivo de inicio) -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">LibroHub</a>
@@ -28,7 +28,10 @@
                         <a class="nav-link" href="catalogo.html">Catálogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
                     </li>
                 </ul>
             </div>
@@ -36,12 +39,37 @@
     </nav>
 
     <!-- Formulario de contacto -->
-    <div class="container">
+    <div class="container mt-5">
         <h1>Contacto</h1>
-        <!-- Agrega aquí el formulario de contacto y otros detalles según tus necesidades -->
+        <p>¿Tienes alguna pregunta o comentario? ¡Estamos aquí para ayudarte!</p>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h4>Información de Contacto</h4>
+                <p><strong>Dirección:</strong> Calle Principal #123, Ciudad</p>
+                <p><strong>Teléfono:</strong> (123) 456-7890</p>
+                <p><strong>Correo Electrónico:</strong> info@librohub.com</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Pie de página (reutiliza el mismo pie de página del archivo de inicio) -->
+    <!-- Pie de página -->
     <footer class="bg-dark text-white text-center py-3">
         <div class="container">
             <p>&copy; 2023 LibroHub. Todos los derechos reservados.</p>

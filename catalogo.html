@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LibroHub - Catálogo de Libros</title>
-    
-    <!-- Incluye los archivos CSS de Bootstrap 5 -->
+
+    <!-- Incluye los archivos CSS y JavaScript de Bootstrap 5 -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Incluye tu archivo Sass personalizado para esta página -->
-    <!--<link href="ruta/a/tu-estilo-catalogo.css" rel="stylesheet">-->
+
+    <!-- Incluye tu archivo Sass personalizado -->
+    <link href="css/tu-estilo-catalogo.scss" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Barra de navegación (reutiliza la misma barra de navegación del archivo de inicio) -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">LibroHub</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -25,10 +28,13 @@
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="catalogo.html">Catálogo</a>
+                        <a class="nav-link" href="#">Catálogo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
                     </li>
                 </ul>
             </div>
@@ -36,23 +42,232 @@
     </nav>
 
     <!-- Contenido del catálogo -->
-    <div class="container">
-        <!-- Contenido del catálogo -->
-<div class="container">
-    <h1>Catálogo de Libros</h1>
-    
-</div>
+    <div class="container mt-5">
+        <h1>Catálogo de Libros</h1>
+        <div class="row">
 
-    </div>
+            <div class="row">
+                <div class="row">
+                    <!-- Libro 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro1.jpg" alt="Libro 1" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">El Gran Gatsby</h5>
+                                <p class="card-text">Autor: F. Scott Fitzgerald</p>
+                                <p class="card-text">Precio: $15.99</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="El Gran Gatsby"
+                                    data-autor="F. Scott Fitzgerald" data-precio="15.99">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Pie de página (reutiliza el mismo pie de página del archivo de inicio) -->
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container">
-            <p>&copy; 2023 LibroHub. Todos los derechos reservados.</p>
+                    <!-- Libro 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro2.jpg" alt="Libro 2" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Cien años de soledad</h5>
+                                <p class="card-text">Autor: Gabriel García Márquez</p>
+                                <p class="card-text">Precio: $20.50</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="Cien años de soledad"
+                                    data-autor="Gabriel García Márquez" data-precio="20.50">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro3.jpg" alt="Libro 3" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Matar a un ruiseñor</h5>
+                                <p class="card-text">Autor: Harper Lee</p>
+                                <p class="card-text">Precio: $18.75</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="Matar a un ruiseñor"
+                                    data-autor="Harper Lee" data-precio="18.75">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 4 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro4.jpg" alt="Libro 4" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">1984</h5>
+                                <p class="card-text">Autor: George Orwell</p>
+                                <p class="card-text">Precio: $16.25</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="1984"
+                                    data-autor="George Orwell" data-precio="16.25">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 5 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro5.jpg" alt="Libro 5" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">La Ciudad y los Perros</h5>
+                                <p class="card-text">Autor: Mario Vargas Llosa</p>
+                                <p class="card-text">Precio: $20.50</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="La Ciudad y los Perros"
+                                    data-autor="Mario Vargas Llosa" data-precio="20.50">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 6 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro6.jpg" alt="Libro 6" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Don Quijote de la Mancha</h5>
+                                <p class="card-text">Autor: Miguel de Cervantes</p>
+                                <p class="card-text">Precio: $22.00</p>
+                                <button class="btn btn-primary agregar-al-carrito"
+                                    data-titulo="Don Quijote de la Mancha" data-autor="Miguel de Cervantes"
+                                    data-precio="22.00">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 7 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro7.jpg" alt="Libro 7" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Crimen y castigo</h5>
+                                <p class="card-text">Autor: Fyodor Dostoevsky</p>
+                                <p class="card-text">Precio: $19.99</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="Crimen y castigo"
+                                    data-autor="Fyodor Dostoevsky" data-precio="19.99">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 8 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro8.jpg" alt="Libro 8" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Harry Potter y la piedra filosofal</h5>
+                                <p class="card-text">Autor: J.K. Rowling</p>
+                                <p class="card-text">Precio: $24.99</p>
+                                <button class="btn btn-primary agregar-al-carrito"
+                                    data-titulo="Harry Potter y la piedra filosofal" data-autor="J.K. Rowling"
+                                    data-precio="24.99">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 9 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro9.jpg" alt="Libro 9" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">El Hobbit</h5>
+                                <p class="card-text">Autor: J.R.R. Tolkien</p>
+                                <p class="card-text">Precio: $18.50</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="El Hobbit"
+                                    data-autor="J.R.R. Tolkien" data-precio="18.50">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 10 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro10.jpg" alt="Libro 10" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">El amor en los tiempos del cólera</h5>
+                                <p class="card-text">Autor: Gabriel García Márquez</p>
+                                <p class="card-text">Precio: $19.25</p>
+                                <button class="btn btn-primary agregar-al-carrito"
+                                    data-titulo="El amor en los tiempos del cólera" data-autor="Gabriel García Márquez"
+                                    data-precio="19.25">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 11 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro11.jpg" alt="Libro 11" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Orgullo y prejuicio</h5>
+                                <p class="card-text">Autor: Jane Austen</p>
+                                <p class="card-text">Precio: $16.75</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="Orgullo y prejuicio"
+                                    data-autor="Jane Austen" data-precio="16.75">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Libro 12 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="img/libro12.jpg" alt="Libro 12" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">El alquimista</h5>
+                                <p class="card-text">Autor: Paulo Coelho</p>
+                                <p class="card-text">Precio: $14.99</p>
+                                <button class="btn btn-primary agregar-al-carrito" data-titulo="El alquimista"
+                                    data-autor="Paulo Coelho" data-precio="14.99">Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
-    </footer>
 
-    <!-- Incluye los archivos JavaScript de Bootstrap 5 al final del documento -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Pie de página -->
+        <footer class="bg-dark text-white text-center py-3">
+            <div class="container">
+                <p>&copy; 2023 LibroHub. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <!-- Incluye los archivos JavaScript de Bootstrap 5 al final del documento -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- Incluye los archivos JavaScript de Bootstrap 5 al final del documento -->
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- JavaScript para manejar el evento de clic en "Agregar al carrito" -->
+        <!-- JavaScript para manejar el evento de clic en "Agregar al carrito" -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const agregarAlCarritoButtons = document.querySelectorAll(".agregar-al-carrito");
+
+        // Función para obtener los libros en el carrito desde localStorage
+        function obtenerLibrosEnCarrito() {
+            const librosEnCarrito = localStorage.getItem("librosEnCarrito");
+            return librosEnCarrito ? JSON.parse(librosEnCarrito) : [];
+        }
+
+        // Función para agregar un libro al carrito
+        function agregarLibroAlCarrito(libro) {
+            const librosEnCarrito = obtenerLibrosEnCarrito();
+            librosEnCarrito.push(libro);
+            localStorage.setItem("librosEnCarrito", JSON.stringify(librosEnCarrito));
+        }
+
+        agregarAlCarritoButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const titulo = this.getAttribute("data-titulo");
+                const autor = this.getAttribute("data-autor");
+                const precio = parseFloat(this.getAttribute("data-precio"));
+                const libro = { titulo, autor, precio };
+
+                agregarLibroAlCarrito(libro);
+
+                alert(`Se ha agregado "${titulo}" al carrito.`);
+            });
+        });
+    });
+</script>
 </body>
+
 </html>
